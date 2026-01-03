@@ -55,6 +55,10 @@ fi
 
 function blob_fixup() {
 	case "${1}" in
+        # Patch libdpmframework to add libshim_dpmframework shim
+        system_ext/lib64/libdpmframework.so)
+        "${PATCHELF}" --add-needed "libshim_dpmframework.so" "${2}"
+        ;;
         # Patch DPM blobs to system_ext variant
         system_ext/etc/init/dpmd.rc|system_ext/etc/permissions/com.qti.dpmframework.xml|system_ext/etc/permissions/dpmapi.xml)
         sed -i 's|/system/product/|/system/system_ext/|g' "${2}"
