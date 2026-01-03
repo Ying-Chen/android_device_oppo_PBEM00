@@ -484,6 +484,7 @@ vendor/lib64/libssd.so
 vendor/lib64/libtzdrmgenprov.so
 
 # DRM (OEM Crypto API)
+vendor/lib/libminkdescriptor.so
 vendor/lib64/libminkdescriptor.so
 
 # DRM (widevine)
