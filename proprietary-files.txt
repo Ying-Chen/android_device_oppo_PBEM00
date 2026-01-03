@@ -445,31 +445,29 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 
-# DPM - from Reno - RKQ1.201217.002
-framework/tcmclient.jar|cdd1ea7143a5a7acc3909b5cfa706650179647c7
-system_ext/bin/dpmd|33d90a04b4094ea346faa25c64c595071f70c26c
-system_ext/etc/dpm/dpm.conf|f2b3a4d8046c46aa7682a3ce4a51a90b76a9ed2d
-system_ext/etc/init/dpmd.rc|69c8ff42fbdbfeadd15cdc396abdecd081ee2130
-system_ext/etc/permissions/com.qti.dpmframework.xml|552c9cc49626e110dac2148593ab3ee586052bcf
-system_ext/etc/permissions/dpmapi.xml|804c13999b514e8464ab01c76625411dea051c0d
-system_ext/framework/com.qti.dpmframework.jar|96a29e28b3abffb9223daadd67459e3f5a3271df
-system_ext/framework/dpmapi.jar|2e2fbe2257a697b96a644c774136da0554430d3f
-system_ext/lib/com.qualcomm.qti.dpm.api@1.0.so|133f0bb54be39eefa757eb95d6935779e32d8cce
-system_ext/lib/libdpmctmgr.so|5e4fdedb0745374bfe78c33e5df2c18b35ba6fde
-system_ext/lib/libdpmfdmgr.so|99cf46fc5f6e9793151199fe246428552c9c586f
-system_ext/lib/libdpmframework.so|fd592e4e68548a61690f78652e2a3e9776fd47e7
-system_ext/lib/libdpmtcm.so|4bbc27f0b9186e08e42e03642329b22fdb4b36cf
-system_ext/lib/vendor.qti.diaghal@1.0.so|7289c0165df0140036cb0a6794fc27d039b85ab5
-system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|f2d02195cca305fad78402c65d090bad72955262
-system_ext/lib64/libdpmctmgr.so|4a7f05a58f1f8ddf11ea035e7df98084a88125b3
-system_ext/lib64/libdpmfdmgr.so|0c264df0111928cbe18ef66dd99906e7b23ba325
-system_ext/lib64/libdpmframework.so|d48ce1b2e9f17e2e7a54b228c648cffcd988e06b
-system_ext/lib64/libdpmtcm.so|daeaf1165bbbf28db60e9a857e6ea0ed6d71ff2e
-system_ext/lib64/vendor.qti.diaghal@1.0.so|4ef9d68a995e89452479e9ba30218f0b2fd3d57f
-vendor/bin/dpmQmiMgr|4fe936478b0da1ee20c6222234b80d478a72cc2a
-vendor/etc/init/dpmQmiMgr.rc|d4d813ad5dbb955adac550c032607613fa58dae8
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|c5c893e86d38b8aa8cd277ccb8b011fb2f19995e
-vendor/lib64/libdpmqmihal.so|ffcd85e1f6bf7d54f37953edc2cb2c4a61fc894a
+# DPM
+framework/tcmclient.jar
+product/bin/dpmd:system_ext/bin/dpmd
+product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf
+product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc
+product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.qti.dpmframework.xml
+product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml
+product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar
+product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar
+product/lib/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib/com.qualcomm.qti.dpm.api@1.0.so
+product/lib/libdpmctmgr.so:system_ext/lib/libdpmctmgr.so
+product/lib/libdpmfdmgr.so:system_ext/lib/libdpmfdmgr.so
+product/lib/libdpmframework.so:system_ext/lib/libdpmframework.so
+product/lib/libdpmtcm.so:system_ext/lib/libdpmtcm.so
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
+product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so
+product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so
+product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so
+product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so
+vendor/bin/dpmQmiMgr
+vendor/etc/init/dpmQmiMgr.rc
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
+vendor/lib64/libdpmqmihal.so
 
 # DRM (QSEECom)
 vendor/bin/qseecomd
