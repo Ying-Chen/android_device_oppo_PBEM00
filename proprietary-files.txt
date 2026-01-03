@@ -546,46 +546,41 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|d5cf2671e9e00f16bebcd8e3dc324
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|17e86e9a2054db733d955fcf1066f6e06a44fb21
 
 # Fingerprint
-#odm/lib/hw/fingerprint.goodix_G2.default.so
-#odm/lib/hw/fingerprint.goodix_G3.default.so
-#odm/lib/hw/fingerprint.goodix_G5.default.so
-#odm/lib/hw/fingerprint.goodix_G6.default.so
-#odm/lib/libgf_hal_G2.so
-#odm/lib/libgf_hal_G3.so
-#odm/lib/libgf_hal_G5.so
-#odm/lib/libgf_hal_G6.so
-#odm/lib64/hw/fingerprint.goodix_G2.default.so
-#odm/lib64/hw/fingerprint.goodix_G3.default.so
-#odm/lib64/hw/fingerprint.goodix_G5.default.so
-#odm/lib64/hw/fingerprint.goodix_G6.default.so
-#odm/lib64/libgf_hal_G2.so
-#odm/lib64/libgf_hal_G3.so
-#odm/lib64/libgf_hal_G5.so
-#odm/lib64/libgf_hal_G6.so
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/qfp-daemon
-vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
+vendor/lib/hw/fingerprint.goodix_G2.default.so
+vendor/lib/hw/fingerprint.goodix_G3.default.so
+vendor/lib/hw/fingerprint.goodix_G5.default.so
+vendor/lib/libgf_hal_G2.so
+vendor/lib/libgf_hal_G3.so
+vendor/lib/libgf_hal_G5.so
 vendor/lib64/android.frameworks.fingerprintservice@1.0.so
+vendor/lib64/hw/fingerprint.goodix_G2.default.so
+vendor/lib64/hw/fingerprint.goodix_G3.default.so
+vendor/lib64/hw/fingerprint.goodix_G5.default.so
+vendor/lib64/libgf_hal_G2.so
+vendor/lib64/libgf_hal_G3.so
+vendor/lib64/libgf_hal_G5.so
 vendor/lib64/libhypnusclient.so
 vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 
 # Firmware
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b00:vendor/firmware/goodixfp.b00
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b01:vendor/firmware/goodixfp.b01
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b02:vendor/firmware/goodixfp.b02
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b03:vendor/firmware/goodixfp.b03
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b04:vendor/firmware/goodixfp.b04
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b05:vendor/firmware/goodixfp.b05
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b06:vendor/firmware/goodixfp.b06
+vendor/euclid/version.18085/vendor/firmware/goodixfp.b07:vendor/firmware/goodixfp.b07
+vendor/euclid/version.18085/vendor/firmware/goodixfp.mdt:vendor/firmware/goodixfp.mdt
 vendor/firmware/fastchg/18085/oppo_vooc_fw.bin
 vendor/firmware/fastchg/18085/oppo_vooc_fw_n76e.bin
 vendor/firmware/tp/18085/FW_S3706_SAMSUNG.img
 vendor/firmware/tp/18085/FW_S3706_SAMSUNG_FAE.img
 vendor/firmware/tp/18085/LIMIT_S3706_SAMSUNG.img
-#odm/vendor/firmware/goodixfp.b00
-#odm/vendor/firmware/goodixfp.b01
-#odm/vendor/firmware/goodixfp.b02
-#odm/vendor/firmware/goodixfp.b03
-#odm/vendor/firmware/goodixfp.b04
-#odm/vendor/firmware/goodixfp.b05
-#odm/vendor/firmware/goodixfp.b06
-#odm/vendor/firmware/goodixfp.b07
-#odm/vendor/firmware/goodixfp.mdt
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
