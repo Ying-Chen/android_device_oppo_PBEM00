@@ -203,6 +203,6 @@
                 <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -90,0 L -35,75 L 35,75 L 90,0 Z</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -70,0 L -70,76 L 70,76 L 70,0 Z</string>
 
 </resources>
