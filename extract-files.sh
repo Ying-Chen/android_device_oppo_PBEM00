@@ -55,14 +55,6 @@ fi
 
 function blob_fixup() {
 	case "${1}" in
-        # Patch libdpmframework to add libshim_dpmframework shim
-        system_ext/lib64/libdpmframework.so)
-        "${PATCHELF}" --add-needed "libshim_dpmframework.so" "${2}"
-        ;;
-        # Patch DPM blobs to system_ext variant
-        system_ext/etc/init/dpmd.rc|system_ext/etc/permissions/com.qti.dpmframework.xml|system_ext/etc/permissions/dpmapi.xml)
-        sed -i 's|/system/product/|/system/system_ext/|g' "${2}"
-        ;;
 		# Patch libs to load versioned libprotobuf from SDK 29, as SDK 32 removed some symbols
         vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
