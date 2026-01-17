@@ -582,10 +582,10 @@ vendor/firmware/tp/18085/FW_S3706_SAMSUNG.img
 vendor/firmware/tp/18085/FW_S3706_SAMSUNG_FAE.img
 vendor/firmware/tp/18085/LIMIT_S3706_SAMSUNG.img
 
-# Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+# Gatekeeper - from Reno - RKQ1.201217.002
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|de1e8d026b16255040dbe6eb67faa73c9b656553
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|fd66ff5a4824e2938f436e368fb4fa3711099302
 
 # Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -794,13 +794,13 @@ vendor/lib/modules/mpq-dmx-hw-plugin.ko
 vendor/lib/modules/qca_cld3_wlan.ko
 vendor/lib/modules/rdbg.ko
 
-# Keymaster
-vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
-vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libkeymasterutils.so
+# Keymaster - from Reno - RKQ1.201217.002
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti|14468f2fce94467c4a6077cdb8c91875fd147594
+vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc|c8999fb1bccbef81e6b362059e9a6ebd023de98f
+vendor/lib64/libkeymasterdeviceutils.so|e9500ef2f03e09cead88c3c20ccc1c29a6c8f7b1
+vendor/lib64/libkeymasterprovision.so|e2c338b4959ee3d32b1776cda602a834100fc665
+vendor/lib64/libkeymasterutils.so|db21b2fec8e5808c562665746d0394575004070b
+vendor/lib64/libqtikeymaster4.so|13f13f5a7650779782a316877cb71cff915a808f
 
 # Media
 lib/libmmosal.so
