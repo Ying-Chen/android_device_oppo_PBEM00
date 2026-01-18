@@ -579,9 +579,9 @@ vendor/euclid/version.18085/vendor/firmware/goodixfp.b07:vendor/firmware/goodixf
 vendor/euclid/version.18085/vendor/firmware/goodixfp.mdt:vendor/firmware/goodixfp.mdt
 vendor/firmware/fastchg/18085/oppo_vooc_fw.bin
 vendor/firmware/fastchg/18085/oppo_vooc_fw_n76e.bin
-vendor/firmware/tp/18085/FW_S3706_SAMSUNG.img
-vendor/firmware/tp/18085/FW_S3706_SAMSUNG_FAE.img
-vendor/firmware/tp/18085/LIMIT_S3706_SAMSUNG.img
+vendor/firmware/tp/18081/FW_S3706_SAMSUNG.img
+vendor/firmware/tp/18081/FW_S3706_SAMSUNG_FAE.img
+vendor/firmware/tp/18081/LIMIT_S3706_SAMSUNG.img
 
 # Gatekeeper - from Reno - RKQ1.201217.002
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|de1e8d026b16255040dbe6eb67faa73c9b656553
