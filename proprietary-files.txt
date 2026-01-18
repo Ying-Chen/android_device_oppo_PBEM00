@@ -1079,28 +1079,24 @@ vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 # SECCOMP policy
 vendor/etc/seccomp_policy/mediacodec.policy
 
-# Sensors
-vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
-vendor/bin/init.qcom.sensors.sh
-vendor/bin/sensors.qti
-vendor/etc/init/hw/init.oppo.sensor.rc
-vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
-vendor/lib/libsnsapi.so
-vendor/lib/sensors.ap.so
-vendor/lib/sensors.ssc.so
-vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
-vendor/lib64/libsensorcal.so
-vendor/lib64/libsensorslog.so
-vendor/lib64/libsns_device_mode_stub.so
-vendor/lib64/libsns_fastRPC_util.so
-vendor/lib64/libsns_low_lat_stream_stub.so
-vendor/lib64/libsnsapi.so
-vendor/lib64/libsnsdiaglog.so
-vendor/lib64/libssc.so
-vendor/lib64/libssc_default_listener.so
-vendor/lib64/sensors.ap.so
-vendor/lib64/sensors.ssc.so
-vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+# Sensors - from Reno - RKQ1.201217.002
+vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service|475fab7f88c20b9cf3f470e337ed5fc576815774
+vendor/bin/sensors.qti|7066bd868a593270f229e558ed9a15427c3eeef9
+vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc|449c88778d880c0d47cc4d651fc60c4c424c1a3f
+vendor/etc/init/vendor.sensors.qti.rc|f34fc966af816b50f10ae7520b33863961a14478
+vendor/lib/libsnsapi.so|740e67e88b7da7bead45b5b3e8fc57c1202db3f9
+vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so|825dbe63811528ef0886db6d9ba569f669fc62d3
+vendor/lib64/libsensorcal.so|aac3e776aa509bdaa25cdc020e05c53f40fd386e
+vendor/lib64/libsensorslog.so|edcdb60ef262024efae67595d118d3c8eb405cc4
+vendor/lib64/libsns_device_mode_stub.so|2bd2f32a4e5194a3035db480f6141d98ea9dc79a
+vendor/lib64/libsns_fastRPC_util.so|02fe2747971c8e2d70abf73a6b9f6382842fd58e
+vendor/lib64/libsns_low_lat_stream_stub.so|4341ea7cfe3f37a5064ab92a4746411a6761e91b
+vendor/lib64/libsnsapi.so|5bde534c54da86ea7474328fde3cd08592674a3e
+vendor/lib64/libsnsdiaglog.so|53ca60e6bbb739f7db83493a74da186b7cb7eccc
+vendor/lib64/libssc.so|7f250a9abbb45432cbfdabf90d9d9d9388a0790a
+vendor/lib64/libssc_default_listener.so|1cb532f9014d7c1fe773ff46b365d6cc4a07e3a6
+vendor/lib64/sensors.ssc.so|893d5db0827d5a8e53efe9447d5c795752b5f4a0
+vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|f45c18014542796af2e2be301bb0dd9100c7106e
 
 # Sensors configs
 vendor/etc/sensors/config/ak991x_dri_0.json
