@@ -65,6 +65,8 @@ function blob_fixup() {
 		vendor/lib64/hw/camera.qcom.so)
 		"${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
 		;;
+		vendor/lib/libsl_fp_impl.so | vendor/lib64/libsl_fp_impl.so | \
+		vendor/lib/libsl_fp_impl_16bit.so | vendor/lib64/libsl_fp_impl.so | \
 		vendor/lib/libgf_hal_G2.so | vendor/lib64/libgf_hal_G2.so | \
 		vendor/lib/libgf_hal_G3.so | vendor/lib64/libgf_hal_G3.so | \
 		vendor/lib/libgf_hal_G5.so | vendor/lib64/libgf_hal_G5.so )
