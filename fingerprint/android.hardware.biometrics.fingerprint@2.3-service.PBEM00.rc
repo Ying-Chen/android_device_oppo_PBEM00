@@ -8,6 +8,11 @@ on post-fs-data
     mkdir /data/system/gf_data 0700 system system
     mkdir /data/images 0700 system system
 
+    # Silead FP
+    mkdir /data/system/silead 0770 system system
+    mkdir /data/vendor/silead 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint/silead 0770 system system
+
     # For FOD (Common)
     chown system system /sys/kernel/oppo_display/hbm
 
