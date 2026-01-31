@@ -1079,6 +1079,9 @@ vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 # SECCOMP policy
 vendor/etc/seccomp_policy/mediacodec.policy
 
+# Sensors
+vendor/lib64/libsnsapi.so:vendor/lib64/libsnsapi-v29.so
+
 # Sensors - from Reno - RKQ1.201217.002
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service|475fab7f88c20b9cf3f470e337ed5fc576815774
 vendor/bin/sensors.qti|7066bd868a593270f229e558ed9a15427c3eeef9

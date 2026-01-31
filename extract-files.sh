@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
 	case "${1}" in
+	    vendor/lib64/hw/camera.qcom.so)
+	    "${PATCHELF}" --replace-needed "libsnsapi.so" "libsnsapi-v29.so" "${2}"
+	    ;;
 		# Patch libs to load versioned libprotobuf from SDK 29, as SDK 32 removed some symbols
         vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
