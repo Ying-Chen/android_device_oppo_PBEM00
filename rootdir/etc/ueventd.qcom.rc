@@ -314,6 +314,10 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/p73                  0660    secure_element         secure_element
 /dev/pn544                0660    nfc         nfc
 
+# fingerprint
+/dev/goodix_fp            0660    system      system
+/dev/silead_fp            0660    system      system
+
 # UIO devices
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system
