@@ -548,7 +548,9 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so|17e86e9a2054db733d955fcf1066f6e06a44f
 
 # Fingerprint
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
+vendor/bin/hw/vendor.oppo.hardware.hypnus@1.0-service
 vendor/bin/qfp-daemon
+vendor/etc/init/vendor.oppo.hardware.hypnus@1.0-service.rc
 vendor/lib/hw/fingerprint.goodix_G2.default.so
 vendor/lib/hw/fingerprint.goodix_G3.default.so
 vendor/lib/hw/fingerprint.goodix_G5.default.so
