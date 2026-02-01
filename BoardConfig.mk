@@ -10,6 +10,7 @@ include vendor/oppo/PBEM00/BoardConfigVendor.mk
 DEVICE_PATH := device/oppo/PBEM00
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
+BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # APEX
