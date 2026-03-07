@@ -8,7 +8,6 @@
 include vendor/oppo/PBEM00/BoardConfigVendor.mk
 
 DEVICE_PATH := device/oppo/PBEM00
-KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
@@ -67,21 +66,18 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := \
-    console=ttyMSM0,115200n8 \
-    earlycon=msm_geni_serial,0xA90000 \
-    androidboot.hardware=qcom \
-    androidboot.console=ttyMSM0 \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    msm_rtb.filter=0x237 \
-    ehci-hcd.park=3 \
-    lpm_levels.sleep_disabled=1 \
-    service_locator.enable=1 \
     androidboot.configfs=true \
+    androidboot.console=0 \
+    androidboot.hardware=qcom \
     androidboot.usbcontroller=a600000.dwc3 \
-    swiotlb=1 \
+    ehci-hcd.park=3 \
+    kpti=off \
     loop.max_part=7 \
+    lpm_levels.sleep_disabled=1 \
+    msm_rtb.filter=0x237 \
     printk.devkmsg=on \
-    kpti=off
+    service_locator.enable=1 \
+    swiotlb=1
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 # TODO: Set SELinux to Permissive mode
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -89,15 +85,10 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_CONFIG := sdm670-perf_defconfig
-
-# Kernel - prebuilt
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
-TARGET_FORCE_PREBUILT_KERNEL := true
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_CONFIG := vendor/sdm670-perf_defconfig vendor/debugfs.config vendor/oplus/sdm710-common.config vendor/oplus/R17.config
+TARGET_KERNEL_SOURCE := kernel/oppo/sdm710
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
