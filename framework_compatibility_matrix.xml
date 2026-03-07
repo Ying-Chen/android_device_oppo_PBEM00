@@ -1,0 +1,77 @@
+<compatibility-matrix version="2.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>android.hardware.light</name>
+        <version>2.0</version>
+        <interface>
+            <name>ILight</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.power</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfc</name>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.appradio</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOplusAppRadio</name>
+            <instance>oplus_app_slot1</instance>
+            <instance>oplus_app_slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.biometrics.face</name>
+        <version>1.0</version>
+        <interface>
+            <name>IBiometricsFace</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.biometrics.fingerprint</name>
+        <version>2.0-1</version>
+        <interface>
+            <name>IBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.ims</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOplusImsRadio</name>
+            <instance>oplusimsradio0</instance>
+            <instance>oplusimsradio1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.motorcontrol</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMotorControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.radio</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOplusRadio</name>
+            <instance>oplus_slot1</instance>
+            <instance>oplus_slot2</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

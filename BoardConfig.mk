@@ -8,7 +8,6 @@
 include vendor/oppo/PBEM00/BoardConfigVendor.mk
 
 DEVICE_PATH := device/oppo/PBEM00
-KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -87,21 +86,15 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_CONFIG := sdm670-perf_defconfig
-
-# Kernel - prebuilt
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
-TARGET_FORCE_PREBUILT_KERNEL := true
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_CONFIG := vendor/sdm670-perf_defconfig vendor/debugfs.config vendor/oplus/sdm710-common.config vendor/oplus/R17.config
+TARGET_KERNEL_SOURCE := kernel/oppo/sdm710
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # Partitions
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
@@ -152,7 +145,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 VENDOR_SECURITY_PATCH := 2022-04-05
 
 # Sepolicy
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Treble

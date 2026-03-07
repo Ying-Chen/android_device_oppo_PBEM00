@@ -64,7 +64,7 @@ on fs
     #Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
     mkdir /mnt/vendor/opporeserve 0771 system system
     #endif /*VENDOR_EDIT*/
-    mount_all /vendor/etc/fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
@@ -75,14 +75,6 @@ on post-fs
     setrlimit 8 67108864 67108864
 
     write /dev/ipa 1
-
-service sec_nvm /vendor/bin/sec_nvm
-    class core
-    user system
-    group system
-
-on late-fs
-    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -114,8 +106,8 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
-# Add a cpuset for the camera daemon
-# We want all cores for camera
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-3
     write /dev/cpuset/camera-daemon/mems 0
@@ -123,10 +115,10 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-#Load WLAN driver
+    # Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
-    ####Regionalization config and prop files####
+    #### Regionalization config and prop files ####
     chmod 0644 /persist/speccfg/spec
     chmod 0644 /persist/speccfg/devicetype
     chmod 0644 /persist/speccfg/mbnversion
@@ -144,7 +136,7 @@ on boot
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
 
-#USB controller configuration
+    # USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -187,7 +179,7 @@ on boot
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/blue/blink
 
-on charger
+on property:init.svc.vendor.charger=running
     setprop sys.usb.configfs 1
 
 ## import cne init file
@@ -460,8 +452,8 @@ on property:init.svc.zygote=restarting
 #    user system
 #    group system
 
-on charger
-     setprop sys.usb.configfs 1
+on property:init.svc.vendor.charger=running
+    setprop sys.usb.configfs 1
 
 #ifndef VENDOR_EDIT
 #Guqcai@psw.bsp.tp 2018/03/12 del for closing hbtp

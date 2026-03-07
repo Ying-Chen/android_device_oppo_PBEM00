@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/oppo/PBEM00/PBEM00-vendor.mk)
@@ -46,6 +46,7 @@ PRODUCT_PACKAGES += \
     libexthwplugin \
     libhdmiedid \
     libhfp \
+    libion.vendor \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -85,11 +86,21 @@ PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
-    libstdc++.vendor \
+    libstdc++_vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
+# DebugFS
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+
 # Display
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.memtrack-service
+
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libqdMetaData \
@@ -115,7 +126,8 @@ PRODUCT_PACKAGES += \
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.gnss@2.1.vendor \
+    libsqlite.vendor
 
 # GNSS configs
 PRODUCT_COPY_FILES += \
@@ -136,8 +148,7 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.qti
 
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1.vendor
@@ -169,13 +180,15 @@ PRODUCT_PACKAGES += \
 
 # Media configs
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/configs/media/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
 
 # Net
 PRODUCT_PACKAGES += \
@@ -195,7 +208,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_softomx_plugin.vendor
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -290,6 +304,8 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
     librmnetctl \
     libxml2
 
@@ -305,7 +321,8 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.qcom \
+    fstab.qcom_ramdisk
 
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
@@ -324,6 +341,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@2.0-service.multihal \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \
     libdumpstateutil.vendor
@@ -353,13 +371,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# Trust
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.3-service.dual_role_usb
 
 PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
@@ -371,7 +385,7 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     libwpa_client \
     libwifi-hal-ctrl \
@@ -386,10 +400,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_wlan_mac.bin_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink
+
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
+    android.media.audio.common.types-V2-cpp \
     libnl \
-    libwfdaac_vendor
+    libwfdaac_vendor \
+    libpng.vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon

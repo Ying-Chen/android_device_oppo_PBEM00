@@ -1,5 +1,0 @@
-# All proprietary files from this list, unless pinned and noted otherwise, are
-# from OPPO R17 (PBEM00_11_F.29).
-
-# Keymaster - from Reno - RKQ1.201217.002
-keymaster.img|c8fad2757f32bc21f7c38c02f1dfbe997c03ba52
